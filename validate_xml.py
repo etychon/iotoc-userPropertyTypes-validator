@@ -1,6 +1,12 @@
+import argparse
 import json
 import xml.etree.ElementTree as ET
-tree = ET.parse('userPropertyTypes.xml')
+
+parser = argparse.ArgumentParser()
+parser.add_argument("file", help="input XML file (ie: userPropertyTypes.xml)")
+args = parser.parse_args()
+
+tree = ET.parse(args.file)
 
 for elem in tree.iter():
 
